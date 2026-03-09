@@ -1,61 +1,57 @@
 "use client"
 
-import { motion } from "framer-motion"
-
-const projects = [
-  {
-    title: "Marksheet Generator",
-    description:
-      "Python project that generates student marksheets using files and dictionaries."
-  },
-  {
-    title: "Iris Data Visualization",
-    description:
-      "Data science project that visualizes the Iris dataset using Python."
-  },
-  {
-    title: "AI Portfolio Website",
-    description:
-      "A modern animated developer portfolio built with Next.js and Tailwind."
-  }
-]
-
 export default function Projects() {
+
+  const projects = [
+    {
+      title: "Portfolio Website",
+      description: "Personal portfolio built using Next.js with animations and modern UI.",
+      link: "https://github.com/santhosh-kr714"
+    },
+    {
+      title: "Machine Learning Project",
+      description: "A machine learning model exploring data science concepts.",
+      link: "https://github.com/santhosh-kr714"
+    },
+    {
+      title: "Python Data Analysis",
+      description: "Data analysis project using Python libraries like NumPy and Pandas.",
+      link: "https://github.com/santhosh-kr714"
+    }
+  ]
+
   return (
-    <section
-      id="projects"
-      className="min-h-screen py-24 px-10 text-white bg-gradient-to-b from-[#020617] to-[#0f172a]"
-    >
+    <section id="projects" className="py-20 px-6 text-center">
 
-      <motion.h2
-        initial={{ opacity:0, y:40 }}
-        whileInView={{ opacity:1, y:0 }}
-        transition={{ duration:0.7 }}
-        className="text-4xl font-bold text-center mb-20 text-cyan-400"
-      >
+      <h2 className="text-4xl font-bold text-cyan-400 mb-12">
         Projects
-      </motion.h2>
+      </h2>
 
-      <div className="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto">
+      <div className="grid md:grid-cols-3 gap-10">
 
         {projects.map((project, index) => (
-          <motion.div
+
+          <a
             key={index}
-            initial={{ opacity:0, y:50 }}
-            whileInView={{ opacity:1, y:0 }}
-            transition={{ delay:index * 0.2 }}
-            whileHover={{ scale:1.08 }}
-            className="bg-[#0f172a]/60 backdrop-blur-lg border border-cyan-400 p-8 rounded-xl shadow-lg hover:shadow-cyan-500/30 transition"
+            href={project.link}
+            target="_blank"
+            className="p-6 bg-slate-800 rounded-xl border border-cyan-500
+
+            transform transition duration-500
+            hover:scale-110 hover:-rotate-1
+            hover:shadow-[0_0_40px_cyan]"
           >
-            <h3 className="text-2xl font-bold mb-4 text-cyan-300">
+
+            <h3 className="text-xl font-bold text-white">
               {project.title}
             </h3>
 
-            <p className="text-gray-300">
+            <p className="text-gray-400 mt-3">
               {project.description}
             </p>
 
-          </motion.div>
+          </a>
+
         ))}
 
       </div>

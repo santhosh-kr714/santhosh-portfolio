@@ -1,85 +1,62 @@
 "use client"
 
-import { motion } from "framer-motion"
-
-const certificates = [
-
-{
-title: "AWS Machine Learning Foundations",
-issuer: "AWS Academy",
-link: "/certificates/aws-ml.pdf"
-},
-
-{
-title: "ChatGPT for Data Analytics",
-issuer: "Analytics Training",
-link: "/certificates/chatgpt-data.pdf"
-},
-
-{
-title: "Graph Machine Learning",
-issuer: "Professional Training",
-link: "/certificates/graph-ml.pdf"
-},
-
-{
-title: "Python Libraries for Data Science",
-issuer: "Data Science Certification",
-link: "/certificates/python-ds.pdf"
-},
-
-{
-title: "Artificial Intelligence for All",
-issuer: "AI Program",
-link: "/certificates/ai-for-all.pdf"
-},
-
-
-
-]
-
 export default function Certificates() {
-return (
 
-<section id="certificates" className="min-h-screen text-white py-24 px-10">
+  const certificates = [
+    {
+      title: "AWS Machine Learning Foundations",
+      file: "/certificates/aws.pdf"
+    },
+    {
+      title: "Graph Machine Learning",
+      file: "/certificates/graph.pdf"
+    },
+    {
+      title: "IBM Cognitive Class",
+      file: "/certificates/ibm.pdf"
+    },
+    {
+      title: "UI Automation with Modern Design",
+      file: "/certificates/ui-automation.pdf"
+    }
+  ]
 
-<h2 className="text-4xl font-bold text-center mb-16 text-cyan-400">
-🏆 Certificates
-</h2>
+  return (
+    <section id="certificates" className="py-20 px-6 text-center">
 
-<div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+      <h2 className="text-4xl font-bold text-cyan-400 mb-12">
+        Certificates
+      </h2>
 
-{certificates.map((cert,index)=>(
-<motion.div
-key={index}
-whileHover={{scale:1.08}}
-className="bg-[#0f172a]/60 backdrop-blur-lg border border-cyan-400 p-8 rounded-xl shadow-lg hover:shadow-cyan-400/40 transition"
->
+      <div className="grid md:grid-cols-3 gap-10">
 
-<h3 className="text-xl font-bold text-cyan-300 mb-3">
-📜 {cert.title}
-</h3>
+        {certificates.map((cert, index) => (
 
-<p className="text-gray-300 mb-4">
-{cert.issuer}
-</p>
+          <a
+            key={index}
+            href={cert.file}
+            target="_blank"
+            className="p-6 bg-slate-800 rounded-xl border border-cyan-500
 
-<a
-href={cert.link}
-target="_blank"
-className="text-cyan-400 hover:underline"
->
+            transform transition duration-500
+            hover:scale-110 hover:-rotate-1
+            hover:shadow-[0_0_40px_cyan]"
+          >
 
-View Certificate 🔗
+            <h3 className="text-xl font-bold text-white">
+              {cert.title}
+            </h3>
 
-</a>
+            <p className="text-gray-400 mt-3">
+              Click to View Certificate
+            </p>
 
-</motion.div>
-))}
+          </a>
 
-</div>
+        ))}
 
-</section>
+      </div>
 
-)
+    </section>
+  )
 }
