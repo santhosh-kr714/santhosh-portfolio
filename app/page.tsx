@@ -5,13 +5,18 @@ import Skills from "../components/Skills"
 import Projects from "../components/Projects"
 import Certificates from "../components/Certificates"
 import Contact from "../components/Contact"
+
 import SpaceBackground from "../components/SpaceBackground"
 import ScrollProgress from "../components/ScrollProgress"
 import SocialLinks from "../components/SocialLinks"
+import CursorGlow from "../components/CursorGlow"
 
 export default function Home() {
   return (
     <main className="relative z-10">
+
+      {/* Cursor glow effect */}
+      <CursorGlow />
 
       {/* Scroll progress bar */}
       <ScrollProgress />
@@ -19,7 +24,7 @@ export default function Home() {
       {/* Floating social icons */}
       <SocialLinks />
 
-      {/* Animated background */}
+      {/* Animated space background */}
       <SpaceBackground />
 
       {/* Website sections */}

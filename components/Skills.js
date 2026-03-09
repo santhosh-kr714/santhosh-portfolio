@@ -2,43 +2,47 @@
 
 import { motion } from "framer-motion"
 
-const skills = [
-  "Python",
-  "Machine Learning",
-  "Data Science",
-  "Artificial Intelligence",
-  "React",
-  "Next.js",
-  "JavaScript",
-  "Git"
-]
-
 export default function Skills() {
+
+  const skills = [
+    { name: "Python", level: 90 },
+    { name: "Machine Learning", level: 85 },
+    { name: "Data Science", level: 80 },
+    { name: "Next.js", level: 75 },
+    { name: "Git & GitHub", level: 85 },
+  ]
+
   return (
-    <section id="skills" className="min-h-screen text-white py-24 px-10">
+    <section id="skills" className="py-20 px-10">
 
-      <motion.h2
-        initial={{ opacity:0, y:40 }}
-        whileInView={{ opacity:1, y:0 }}
-        transition={{ duration:0.7 }}
-        className="text-4xl font-bold text-center mb-20 text-cyan-400"
-      >
+      <h2 className="text-4xl font-bold text-center text-cyan-400 mb-12">
         Skills
-      </motion.h2>
+      </h2>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-10 max-w-5xl mx-auto">
+      <div className="max-w-3xl mx-auto space-y-8">
 
         {skills.map((skill, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity:0, y:40 }}
-            whileInView={{ opacity:1, y:0 }}
-            transition={{ delay:index * 0.1 }}
-            whileHover={{ scale:1.1 }}
-            className="bg-[#0f172a]/60 backdrop-blur-lg border border-cyan-400 p-6 rounded-xl text-center text-lg font-semibold shadow-lg hover:shadow-cyan-400/40 transition"
-          >
-            {skill}
-          </motion.div>
+
+          <div key={index}>
+
+            <div className="flex justify-between mb-2">
+              <span className="text-white">{skill.name}</span>
+              <span className="text-gray-400">{skill.level}%</span>
+            </div>
+
+            <div className="w-full bg-gray-700 rounded-full h-3">
+
+              <motion.div
+                initial={{ width: 0 }}
+                whileInView={{ width: skill.level + "%" }}
+                transition={{ duration: 1.2 }}
+                className="h-3 bg-cyan-400 rounded-full"
+              />
+
+            </div>
+
+          </div>
+
         ))}
 
       </div>
