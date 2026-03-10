@@ -5,43 +5,48 @@ import { loadFull } from "tsparticles"
 
 export default function NeuralBackground() {
 
-  const particlesInit = async (engine) => {
-    await loadFull(engine)
+  const particlesInit = async (main) => {
+    await loadFull(main)
   }
 
   return (
-
     <Particles
       id="tsparticles"
       init={particlesInit}
-
       options={{
-
-        background:{color:"transparent"},
-
-        particles:{
-          number:{value:80},
-          color:{value:"#22d3ee"},
-
-          links:{
-            enable:true,
-            color:"#22d3ee",
-            distance:150
+        background: {
+          color: {
+            value: "#020617"
+          }
+        },
+        fpsLimit: 60,
+        particles: {
+          number: {
+            value: 70
           },
-
-          move:{
-            enable:true,
-            speed:2
+          color: {
+            value: "#22d3ee"
           },
-
-          size:{
-            value:2
+          links: {
+            enable: true,
+            color: "#22d3ee",
+            distance: 150
+          },
+          move: {
+            enable: true,
+            speed: 1
+          },
+          size: {
+            value: 2
           }
         }
       }}
-
-      className="fixed top-0 left-0 -z-10"
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        zIndex: -1
+      }}
     />
-
   )
 }

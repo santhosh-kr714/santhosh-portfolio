@@ -1,27 +1,38 @@
 "use client"
+
 import { useEffect, useState } from "react"
 
 export default function ScrollProgress() {
+
   const [scroll, setScroll] = useState(0)
 
   useEffect(() => {
-    const handleScroll = () => {
-      const total =
-        document.documentElement.scrollHeight -
-        document.documentElement.clientHeight
-      const progress =
-        (window.scrollY / total) * 100
+    const updateScroll = () => {
+      const scrolled =
+        (window.scrollY /
+          (document.body.scrollHeight - window.innerHeight)) * 100
 
-      setScroll(progress)
+      setScroll(scrolled)
     }
 
-    window.addEventListener("scroll", handleScroll)
+    window.addEventListener("scroll", updateScroll)
+
+    return () => {
+      window.removeEventListener("scroll", updateScroll)
+    }
   }, [])
 
   return (
     <div
-      style={{ width: scroll + "%" }}
-      className="fixed top-0 left-0 h-1 bg-cyan-400 z-50"
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        height: "4px",
+        width: `${scroll}%`,
+        background: "#22d3ee",
+        zIndex: 100
+      }}
     />
   )
 }
