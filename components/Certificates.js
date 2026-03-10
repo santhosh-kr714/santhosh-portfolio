@@ -1,51 +1,39 @@
-"use client";
-
-const certificates = [
-  {
-    title: "AWS Machine Learning Foundations",
-    file: "/AWS_Academy_Graduate.pdf",
-  },
-  {
-    title: "Graph Machine Learning",
-    file: "/graph_machine_learning.pdf",
-  },
-  {
-    title: "IBM Cognitive Class",
-    file: "/IBM_certificate.pdf",
-  },
-];
-
 export default function Certificates() {
+
+  const certificates = [
+    "AWS Machine Learning Foundations",
+    "Graph Machine Learning",
+    "IBM Cognitive Class"
+  ];
+
   return (
-    <section id="certificates" className="py-24">
+    <section id="certificates" className="py-20">
 
-      <div className="max-w-7xl mx-auto px-10">
+      <div className="max-w-6xl mx-auto px-6">
 
-        <h2 className="text-4xl font-bold text-cyan-400 text-center mb-16">
+        <h2 className="text-4xl font-bold text-cyan-400 text-center mb-12">
           Certificates
         </h2>
 
-        <div className="grid md:grid-cols-3 gap-10">
-                    {certificates.map((cert, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-            <a
-              key={index}
-              href={cert.file}
-              target="_blank"
-              className="p-6 rounded-xl border border-cyan-400 bg-white/5 backdrop-blur-lg hover:scale-105 transition text-center"
+          {certificates.map((c, i) => (
+            <div
+              key={i}
+              className="p-6 border border-cyan-400 rounded-xl bg-gray-800 text-center hover:scale-105 transition"
             >
 
-              <h3 className="text-lg font-semibold mb-2">
-                {cert.title}
+              <h3 className="text-xl font-semibold text-white">
+                {c}
               </h3>
 
-              <p className="text-gray-400">
+              <p className="text-gray-400 mt-2">
                 Click to View Certificate
               </p>
 
-            </a>
-
+            </div>
           ))}
+
         </div>
 
       </div>
