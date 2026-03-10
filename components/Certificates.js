@@ -1,62 +1,56 @@
-"use client"
+"use client";
+
+const certificates = [
+  {
+    title: "AWS Machine Learning Foundations",
+    file: "/AWS_Academy_Graduate.pdf",
+  },
+  {
+    title: "Graph Machine Learning",
+    file: "/graph_machine_learning.pdf",
+  },
+  {
+    title: "IBM Cognitive Class",
+    file: "/IBM_certificate.pdf",
+  },
+];
 
 export default function Certificates() {
-
-  const certificates = [
-    {
-      title: "AWS Machine Learning Foundations",
-      file: "/certificates/aws.pdf"
-    },
-    {
-      title: "Graph Machine Learning",
-      file: "/certificates/graph.pdf"
-    },
-    {
-      title: "IBM Cognitive Class",
-      file: "/certificates/ibm.pdf"
-    },
-    {
-      title: "UI Automation with Modern Design",
-      file: "/certificates/ui-automation.pdf"
-    }
-  ]
-
   return (
-    <section id="certificates" className="py-20 px-6 text-center">
+    <section id="certificates" className="py-24">
 
-      <h2 className="text-4xl font-bold text-cyan-400 mb-12">
-        Certificates
-      </h2>
+      <div className="max-w-6xl mx-auto px-6">
 
-      <div className="grid md:grid-cols-3 gap-10">
+        <h2 className="text-4xl font-bold text-cyan-400 text-center mb-16">
+          Certificates
+        </h2>
 
-        {certificates.map((cert, index) => (
+        <div className="grid md:grid-cols-3 gap-10">
 
-          <a
-            key={index}
-            href={cert.file}
-            target="_blank"
-            className="p-6 bg-slate-800 rounded-xl border border-cyan-500
+                    {certificates.map((c, i) => (
 
-            transform transition duration-500
-            hover:scale-110 hover:-rotate-1
-            hover:shadow-[0_0_40px_cyan]"
-          >
+            <a
+              key={i}
+              href={c.file}
+              target="_blank"
+              className="p-6 rounded-xl border border-cyan-400 bg-white/5 backdrop-blur-lg hover:scale-105 transition text-center"
+            >
 
-            <h3 className="text-xl font-bold text-white">
-              {cert.title}
-            </h3>
+              <h3 className="text-lg font-semibold mb-2">
+                {c.title}
+              </h3>
 
-            <p className="text-gray-400 mt-3">
-              Click to View Certificate
-            </p>
+              <p className="text-gray-400">
+                Click to View Certificate
+              </p>
 
-          </a>
+            </a>
 
-        ))}
+          ))}
+        </div>
 
       </div>
 
     </section>
-  )
+  );
 }
