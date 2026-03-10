@@ -19,25 +19,24 @@ export default function Certificates() {
   return (
     <section id="certificates" className="py-24">
 
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-10">
 
         <h2 className="text-4xl font-bold text-cyan-400 text-center mb-16">
           Certificates
         </h2>
 
         <div className="grid md:grid-cols-3 gap-10">
-
-                    {certificates.map((c, i) => (
+                    {certificates.map((cert, index) => (
 
             <a
-              key={i}
-              href={c.file}
+              key={index}
+              href={cert.file}
               target="_blank"
               className="p-6 rounded-xl border border-cyan-400 bg-white/5 backdrop-blur-lg hover:scale-105 transition text-center"
             >
 
               <h3 className="text-lg font-semibold mb-2">
-                {c.title}
+                {cert.title}
               </h3>
 
               <p className="text-gray-400">
