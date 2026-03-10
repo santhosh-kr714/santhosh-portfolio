@@ -7,11 +7,11 @@ export default function Hero() {
   return (
     <section className="min-h-screen flex items-center px-8">
 
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center relative">
 
         {/* LEFT SIDE */}
 
-        <div>
+        <div className="relative z-10">
 
           <p className="text-cyan-400 text-lg mb-4">
             Hello World, I'm
@@ -60,7 +60,7 @@ export default function Hero() {
 
         {/* RIGHT SIDE */}
 
-        <div className="relative">
+        <div className="relative flex justify-center md:justify-end">
 
           <Image
             src="/ai-developer.svg"
