@@ -7,43 +7,35 @@ import GithubProjects from "../components/GithubProjects"
 import Certificates from "../components/Certificates"
 import Contact from "../components/Contact"
 
-import SpaceBackground from "../components/SpaceBackground"
+import NeuralBackground from "../components/NeuralBackground"
+import CursorGlow from "../components/CursorGlow"
 import ScrollProgress from "../components/ScrollProgress"
 import SocialLinks from "../components/SocialLinks"
-import CursorGlow from "../components/CursorGlow"
 
 export default function Home() {
   return (
     <main className="relative z-10">
 
-      {/* Cursor glow effect */}
+      {/* Cursor glow */}
       <CursorGlow />
 
       {/* Scroll progress bar */}
       <ScrollProgress />
 
-      {/* Floating social icons */}
+      {/* Floating social links */}
       <SocialLinks />
 
-      {/* Animated space background */}
-      <SpaceBackground />
+      {/* AI neural network background */}
+      <NeuralBackground />
 
-      {/* Website sections */}
+      {/* Portfolio sections */}
       <Navbar />
       <Hero />
       <About />
       <Skills />
-
-      {/* Projects section */}
       <Projects />
-
-      {/* GitHub auto projects */}
       <GithubProjects />
-
-      {/* Certificates */}
       <Certificates />
-
-      {/* Contact */}
       <Contact />
 
     </main>

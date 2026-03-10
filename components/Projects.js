@@ -1,26 +1,29 @@
 "use client"
 
+import Tilt from "react-parallax-tilt"
+
 export default function Projects() {
 
   const projects = [
     {
       title: "Portfolio Website",
-      description: "Personal portfolio built using Next.js with animations and modern UI.",
+      description: "Modern portfolio built with Next.js",
       link: "https://github.com/santhosh-kr714"
     },
     {
       title: "Machine Learning Project",
-      description: "A machine learning model exploring data science concepts.",
+      description: "Exploring machine learning models",
       link: "https://github.com/santhosh-kr714"
     },
     {
       title: "Python Data Analysis",
-      description: "Data analysis project using Python libraries like NumPy and Pandas.",
+      description: "Data analysis using Python libraries",
       link: "https://github.com/santhosh-kr714"
     }
   ]
 
   return (
+
     <section id="projects" className="py-20 px-6 text-center">
 
       <h2 className="text-4xl font-bold text-cyan-400 mb-12">
@@ -29,16 +32,21 @@ export default function Projects() {
 
       <div className="grid md:grid-cols-3 gap-10">
 
-        {projects.map((project, index) => (
+        {projects.map((project,index)=>(
+
+          <Tilt
+            key={index}
+            glareEnable={true}
+            glareMaxOpacity={0.3}
+            scale={1.05}
+          >
 
           <a
-            key={index}
             href={project.link}
             target="_blank"
-            className="p-6 bg-slate-800 rounded-xl border border-cyan-500
+            className="block p-6 bg-slate-800 rounded-xl border border-cyan-500
 
-            transform transition duration-500
-            hover:scale-110 hover:-rotate-1
+            transition duration-500
             hover:shadow-[0_0_40px_cyan]"
           >
 
@@ -52,10 +60,13 @@ export default function Projects() {
 
           </a>
 
+          </Tilt>
+
         ))}
 
       </div>
 
     </section>
+
   )
 }
