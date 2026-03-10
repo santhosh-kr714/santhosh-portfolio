@@ -18,7 +18,7 @@ export default function Projects() {
   return (
     <section id="skills" className="py-20 flex justify-center">
 
-      <div className="max-w-6xl mx-auto px-10">
+      <div className="max-w-7xl mx-auto px-6">
 
         <h2 className="text-4xl font-bold text-cyan-400 text-center mb-12">
           Projects
